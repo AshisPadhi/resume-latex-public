@@ -1,0 +1,160 @@
+%%%%
+% Sample Resume (Anonymized)
+%%%%
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{0e6e55}
+\definecolor{accentText}{HTML}{0e6e55}
+\definecolor{accentLine}{HTML}{a16f0b}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+\newcommand{\documentFooter}[1]{
+  \setlength{\footskip}{10.25pt}
+  \fancyfoot[C]{\footnotesize #1}
+}
+\newcommand{\numberedPages}{
+  \documentFooter{\thepage/\pageref{LastPage}}
+}
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+\newcommand{\tinysection}[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+}
+\newcommand{\heading}[2]{
+  \hspace{10pt}#1\hfill#2\\
+}
+\newcommand{\headingBf}[2]{
+  \heading{\textbf{#1}}{\textbf{#2}}
+}
+\newcommand{\headingIt}[2]{
+  \heading{\textit{#1}}{\textit{#2}}
+}
+\newenvironment{resume_list}{
+  \vspace{-7pt}
+  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+}{
+  \end{itemize}
+}
+\renewcommand\labelitemi{--}
+
+\begin{document}
+
+\documentTitle{John Doe}{
+  \href{tel:9999999999}{\faPhone\ 9999999999} ~ | ~
+  \href{mailto:john.doe@example.com}{\faEnvelope\ john.doe@example.com} ~ | ~
+  \href{https://linkedin.com/in/johndoe}{\faLinkedin\ linkedin.com/in/johndoe} ~ | ~
+  \href{https://github.com/johndoe}{\faGithub\ github.com/johndoe}
+}
+
+\tinysection{Summary}
+Experienced Site Reliability Engineer with expertise in cloud infrastructure, observability, and automation.
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\textbf{Languages} & Python, Bash \\
+\textbf{Automation} & Ansible, Python \\
+\textbf{Cloud} & GCP, AWS, Azure \\
+\textbf{OS} & Windows, Linux (Ubuntu, RHEL) \\
+\textbf{Policies} & SOC2, GDPR \\
+\textbf{Tools \& Platform} & Docker, Kubernetes (EKS, GKE, AKS), Helm, Terraform (IaC), Git, GitHub Actions, GitLab CI, Argo CD, JFrog Artifactory, SonarQube, Jenkins, Spinnaker, Vault, Consul \\
+\textbf{Monitoring \& Observability\hspace{6pt}} & Datadog, Dynatrace, Prometheus, Grafana \\
+\end{tabularx}
+
+\section{Experience}
+\headingBf{Company A}{2025 -- Present}
+\headingIt{Site Reliability Engineer}{}
+\begin{resume_list}
+  \item Onboarded Kubernetes clusters to Dynatrace, reducing MTTD by 35\%.
+  \item Implemented non-disruptive upgrades in AKS, improving uptime to 99.99\%.
+  \item Led incident response and RCA, cutting resolution time by 40\%.
+\end{resume_list}
+
+\headingBf{Company B}{2024 -- 2025}
+\headingIt{DevOps Engineer}{}
+\begin{resume_list}
+  \item Built GCP infrastructure using Terraform, automating provisioning for 100+ resources.
+  \item Created Python scripts to validate secrets, reducing manual work by 90\%.
+  \item Maintained SLIs/SLOs and ensured SLA compliance using Datadog.
+\end{resume_list}
+
+\headingBf{Company C}{2020 -- 2024}
+\headingIt{DevOps Associate}{}
+\begin{resume_list}
+  \item Improved CI/CD pipeline efficiency by 25\% with ArgoCD image updater.
+  \item Automated SonarQube setup using Python and REST APIs.
+  \item Contributed to branching strategy and monitored systems 24/7 using Datadog.
+\end{resume_list}
+
+\section{Education}
+\headingBf{XYZ University}{2016 -- 2020}
+\headingIt{B.Tech in Computer Science}{GPA: 9.6/10}
+
+\section{Certifications and Awards}
+\begin{resume_list}
+  \item Certified Kubernetes Administrator (CKA)
+  \item Certified Kubernetes Application Developer (CKAD)
+  \item Azure Fundamentals (AZ-900)
+  \item Winner - Cloud Hackathon 2023
+\end{resume_list}
+
+
+\section{Publications}
+\headingBf{AutoScale: Dynamic Resource Allocation for Microservices}{Dec 2023}
+\begin{resume_list}
+  \item Published in International Conference on Cloud Systems. Proposed a Kubernetes autoscaler using predictive algorithms for workload spikes.
+\end{resume_list}
+
+\headingBf{ObservaTrack: A Unified Observability Dashboard}{Jul 2022}
+\begin{resume_list}
+  \item Developed a centralized monitoring solution integrating Prometheus, Grafana, and alert systems; featured at DevOpsCon Europe.
+\end{resume_list}
+
+\end{document}
+
